@@ -1,0 +1,12 @@
+ui_print("Installing Instagram Material You Theme...");
+
+# Ensure system mount
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+
+# Copy overlay APK to the system overlay folder
+package_extract_dir("system", "/system");
+
+# Make sure permissions are correct
+set_perm(0, 0, 0644, "/system/product/overlay/InstagramMaterialYouOverlay.apk");
+
+ui_print("Instagram Material You Theme installed.");
