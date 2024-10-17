@@ -1,8 +1,14 @@
 #!/system/bin/sh
 
-# Install the LSPosed hook configuration for Instagram
+# Create LSPosed config directory if it doesn't exist
 mkdir -p /data/adb/lspd/configs/
+
+# Copy the hook configuration to LSPosed configs
 cp /data/adb/modules/instagram_material_you/lposed/configs/instagram_material_you.json /data/adb/lspd/configs/
 
-# Apply the overlay APK
-mount -o bind /data/adb/modules/instagram_material_you/system/product/overlay/InstagramMaterialYouOverlay.apk /system/product/overlay/InstagramMaterialYouOverlay.apk
+# Copy the dynamic colours hook script
+cp /data/adb/modules/instagram_material_you/custom/dynamic_colours/dynamic_colours_hook.js /data/adb/lspd/scripts/
+
+# Set appropriate permissions
+chmod 644 /data/adb/lspd/configs/instagram_material_you.json
+chmod 644 /data/adb/lspd/scripts/dynamic_colours_hook.js
