@@ -5,12 +5,8 @@
     {
       "methodName": "onCreate",
       "hookType": "before",
-      "code": "modifyTheme();"
+      "code": "applyMaterialYouTheme();"
     }
   ],
-  "script": "function modifyTheme() { 
-    // Your code to modify colors, layouts, etc.
-    var colors = loadMaterialYouColors(); 
-    setInstagramColors(colors);
-  }"
+  "script": "/data/adb/modules/instagram_material_you/custom/dynamic_colours/dynamic_colours_hook.js"
 }
