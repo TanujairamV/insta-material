@@ -1,0 +1,16 @@
+{
+  "package": "com.instagram.android",
+  "className": "com.instagram.app.InstagramActivity",
+  "hooks": [
+    {
+      "methodName": "onCreate",
+      "hookType": "before",
+      "code": "modifyTheme();"
+    }
+  ],
+  "script": "function modifyTheme() { 
+    // Your code to modify colors, layouts, etc.
+    var colors = loadMaterialYouColors(); 
+    setInstagramColors(colors);
+  }"
+}
