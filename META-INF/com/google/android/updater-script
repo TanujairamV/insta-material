@@ -1,12 +1,14 @@
-ui_print("Installing Instagram Material You Theme...");
+ui_print("Installing Instagram Material You Theme with Dynamic Colors...");
 
-# Ensure system mount
+# Ensure the system mount
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
 
-# Copy overlay APK to the system overlay folder
-package_extract_dir("system", "/system");
+# Set up directories
+package_extract_dir("lposed", "/data/adb/modules/instagram_material_you/lposed");
+package_extract_dir("custom", "/data/adb/modules/instagram_material_you/custom");
 
-# Make sure permissions are correct
-set_perm(0, 0, 0644, "/system/product/overlay/InstagramMaterialYouOverlay.apk");
+# Set appropriate permissions
+set_perm(0, 0, 0644, "/data/adb/modules/instagram_material_you/lposed/configs/instagram_material_you.json");
+set_perm(0, 0, 0644, "/data/adb/modules/instagram_material_you/custom/dynamic_colours/dynamic_colours_hook.js");
 
-ui_print("Instagram Material You Theme installed.");
+ui_print("Instagram Material You Theme with Dynamic Colors installed.");
